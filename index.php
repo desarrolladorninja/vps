@@ -19,7 +19,7 @@ class Serve {
 		$file = $this->path.'/config.ini';
 		$this->_print("config ".$file);
 		if (!file_exists($file)) {
-			throw new Excpetion("not config.json file found");
+			throw new \Exception("Not config.json file found.");
 		}
 		$this->config = parse_ini_file($file);
 	}
