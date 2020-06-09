@@ -17,14 +17,12 @@ if (file_exists($pharFile . '.gz')) {
 $p = new Phar($pharFile);
 
 // creating our library using whole directory
-$p->buildFromDirectory('/app/');
+$p->buildFromDirectory('.');
 
 // pointing main file which requires all classes
 $p->setDefaultStub('index.php', '/index.php');
 
 // plus - compressing it into gzip
 $p->compress(Phar::GZ);
-
-unlink('build/vps.phar.gz');
 
 echo "$pharFile successfully created";
