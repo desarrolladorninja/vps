@@ -1,0 +1,6 @@
+version: "3.2"
+services:
+  php:
+    build: './etc/docker/php/'
+    volumes:
+      - .:/app/
